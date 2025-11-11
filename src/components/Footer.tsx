@@ -1,10 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { Code2, Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Code2, Github, Linkedin, Mail, Phone, Users, Send, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
 	const currentYear = new Date().getFullYear();
+	const email = 'a.ddumba@kyakabi.com';
+	const whatsappNumber = '+256701019242';
 
 	const pageLinks = [
 		{ name: 'Home', path: '/' },
@@ -118,7 +120,7 @@ const Footer = () => {
 								<Github className="w-5 h-5" />
 							</a>
 							<a
-								href="https://linkedin.com/in/Hatalabdallah"
+								href="https://ug.linkedin.com/in/abdallah-ddumba-kato-414462236"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-gray-400 hover:text-white transition-colors"
@@ -126,10 +128,40 @@ const Footer = () => {
 								<Linkedin className="w-5 h-5" />
 							</a>
 							<a
-								href="mailto:a.ddumba@kyakabi.com"
+								href={`mailto:${email}`}
 								className="text-gray-400 hover:text-white transition-colors"
 							>
 								<Mail className="w-5 h-5" />
+							</a>
+
+							{/* New: Twitter Alternative */}
+							<a
+								href="https://twitter.com/Hatalabdallah"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-gray-400 hover:text-white transition-colors"
+							>
+								<MessageSquare className="w-5 h-5" /> 
+							</a>
+
+							{/* New: Facebook Alternative */}
+							<a
+								href="https://www.facebook.com/abdallahddumba.kato/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-gray-400 hover:text-white transition-colors"
+							>
+								<Users className="w-5 h-5" />
+							</a>
+							
+							{/* New: WhatsApp Alternative */}
+							<a
+								href={`https://wa.me/${whatsappNumber}`}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-gray-400 hover:text-white transition-colors"
+							>
+								<Send className="w-5 h-5" />
 							</a>
 						</div>
 					</div>
