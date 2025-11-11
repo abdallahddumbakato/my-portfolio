@@ -13,7 +13,7 @@ const Education = () => {
 			duration: "2023 - PRESENT",
 			degree: "Bachelor of Science in Information Technology (Final Year)",
 			grade: "GPA: 4.0/4.0",
-			image: "/education/graduation-ymca.jpg",
+			image: "/education/graduation-ymca-1.jpg",
 			resultUrl: "/files/education_pdf/Transcript.pdf",
 			coursework: [
 				"Web Technologies",
