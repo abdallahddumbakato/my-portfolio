@@ -145,7 +145,7 @@ export async function POST(request: NextRequest) {
                             <!-- Header -->
                             <tr>
                                 <td class="header" align="center">
-                                    <img src="/profile/ibd.png" alt="Ddumba Abdallah Kato Portfolio" width="564" style="display: block; max-width: 100%;">
+                                    <img src="https://ddumba.kyakabi.com/profile/ibd.png" alt="Ddumba Abdallah Kato Portfolio" width="564" style="display: block; max-width: 100%;">
                                 </td>
                             </tr>
                         
@@ -344,7 +344,7 @@ export async function POST(request: NextRequest) {
                             <!-- Header -->
                             <tr>
                                 <td class="header" align="center">
-                                    <img src="/profile/ibd.png" alt="Ddumba Abdallah Kato Portfolio" width="564" style="display: block; max-width: 100%;">
+                                    <img src="https://ddumba.kyakabi.com/profile/ibd.png" alt="Ddumba Abdallah Kato Portfolio" width="564" style="display: block; max-width: 100%;">
                                 </td>
                             </tr>
                         
