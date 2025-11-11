@@ -54,10 +54,10 @@ const About = () => {
 				<ScrollAnimation className="space-y-6">
 					<div className="space-y-4">
 						<p className="text-gray-300 leading-relaxed">
-							Hi! I'm a passionate software developer with expertise in building modern web applications. My journey in tech started during my university years, where I discovered my love for creating innovative solutions through code.
+							Hi! I'm Ddumba Abdallah Kato, a passionate software developer with expertise in building modern web applications. My journey in tech started during my university years, where I discovered my love for creating innovative solutions through code.
 						</p>
 						<p className="text-gray-300 leading-relaxed">
-							Currently pursuing my Bachelor of Science in Information Technology with a perfect 4.0 GPA, I've maintained strong academic performance while actively engaging in real-world projects. My previous Bachelor's degree in Computer Science with First Class Honours has provided me with a solid foundation in software development.
+							Currently pursuing my Bachelor of Science in Information Technology with a perfect 4.0 GPA at YMCA Comprehensive Institute, I've maintained strong academic performance while actively engaging in real-world projects. My previous Bachelor's degree in Computer Science with First Class Honours from Islamic University in Uganda has provided me with a solid foundation in software development.
 						</p>
 						<p className="text-gray-300 leading-relaxed">
 							I specialize in web technologies, database systems, and cloud computing, with a keen interest in creating performant and user-friendly applications. My experience includes working on various software development projects and continuously learning new technologies.
@@ -68,7 +68,7 @@ const About = () => {
 						<div className="pt-4">
 							<h3 className="text-2xl font-semibold mb-4 gradient-text">Quick Facts</h3>
 							<ul className="list-none space-y-3">
-								{["Based in Kampala, Uganda", "BSc in Information Technology (Current)", "BSc in Computer Science (First Class)"].map((fact, index) => (
+								{["Based in Kampala, Uganda", "BSc in Information Technology (Current) - 4.0/4.0 GPA", "BSc in Computer Science (First Class Honours) - 4.58/5.0 GPA"].map((fact, index) => (
 									<motion.li
 										key={fact}
 										className="flex items-center space-x-2 text-gray-300"
