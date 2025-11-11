@@ -15,7 +15,7 @@ const Home = () => {
 	const email = 'a.ddumba@kyakabi.com';
 	const whatsappNumber = '+256701019242';
 
-	const { data: githubData } = useSWR('https://api.github.com/users/Hatalabdallah', fetcher);
+	const { data: githubData } = useSWR('https://api.github.com/users/abdallahddumbakato', fetcher);
 	function formatRepoCount(count: number): string {
 		if (count < 5) return count.toString();
 		return `${Math.floor(count / 5) * 5}+`;
