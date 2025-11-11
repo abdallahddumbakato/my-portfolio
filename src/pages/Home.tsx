@@ -50,7 +50,7 @@ const Home = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					Ddumba Abdallah Kato
+					Ddumba K Abdallah
 				</motion.h1>
 				<motion.h1
 					className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 relative tracking-tighter"
