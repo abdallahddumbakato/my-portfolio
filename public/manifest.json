@@ -1,0 +1,26 @@
+{
+	"name": "Ddumba Abdallah Kato Portfolio",
+	"short_name": "Ddumba Abdallah Kato",
+	"description": "Software Developer Portfolio",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#000000",
+	"theme_color": "#000000",
+	"orientation": "portrait",
+	"icons": [
+		{
+			"src": "/nextjs.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any maskable"
+		},
+		{
+			"src": "/nextjs.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	],
+	"offline_enabled": true,
+	"prefer_related_applications": false
+}

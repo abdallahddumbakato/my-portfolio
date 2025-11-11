@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	color-scheme: dark;
+}
+
+body {
+	@apply bg-black text-gray-100;
+	overflow-x: hidden;
+}
+
+.gradient-text {
+	@apply bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500;
+}
+
+.nav-link {
+	@apply relative px-3 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.05];
+}
+
+.canvas-container {
+	@apply fixed top-0 left-0 w-full h-full -z-10;
+	background: radial-gradient(circle at 50% 0%,
+			rgba(0, 0, 0, 0) 6%,
+			rgba(0, 0, 0, 0.8) 45%);
+}
+
+.gradient-grid {
+	background-image:
+		linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+	background-size: 60px 60px;
+	mask-image: radial-gradient(circle at 50% 0%, white 20%, transparent 70%);
+}
+
+.spotlight {
+	pointer-events: none;
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	--size: 600px;
+	--spotlight: radial-gradient(var(--size) var(--size) at center,
+			rgba(0, 0, 0, 0),
+			rgba(0, 0, 0, 1) 100%);
+	mask-image: var(--spotlight);
+	-webkit-mask-image: var(--spotlight);
+	background: radial-gradient(300px 300px at center,
+			rgba(255, 255, 255, 0.05),
+			transparent 100%);
+}
+
+/* Custom cursor for copy button */
+.cursor-copy {
+	cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'></path><rect x='8' y='2' width='8' height='4' rx='1' ry='1'></rect></svg>") 12 12, pointer;
+}
