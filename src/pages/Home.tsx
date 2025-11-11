@@ -2,7 +2,7 @@
 
 import { VercelLogo } from '@/components/TechLogos';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, MessageCircle, Copy, Check, FileDown, User } from 'lucide-react';
+import { Github, Linkedin, MessageCircle, Copy, Check, FileDown, User, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import useSWR from 'swr';
@@ -151,14 +151,15 @@ const Home = () => {
 						</motion.a>
 
 						<motion.a
-							href="https://linkedin.com/in/Hatalabdallah"
+							href="https://twitter.com/Hatalabdallah" // Use x.com for the new link
 							target="_blank"
 							rel="noopener noreferrer"
 							className="flex flex-col items-center group w-full"
 							whileHover={{ y: -2 }}
 						>
 							<div className="p-3 rounded-xl transition-colors mb-2 w-full max-w-[200px]">
-								<Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-white transition-colors mx-auto" />
+								{/* Replace Github/Linkedin with your icon component */}
+								<X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-white transition-colors mx-auto" />
 							</div>
 							<motion.div
 								className="flex flex-col items-center"
@@ -166,8 +167,8 @@ const Home = () => {
 								animate={{ opacity: 1 }}
 								transition={{ delay: 0.8 }}
 							>
-								<span className="text-base sm:text-lg font-semibold">Connect</span>
-								<span className="text-xs sm:text-sm text-gray-400">LinkedIn</span>
+								<span className="text-base sm:text-lg font-semibold">Follow</span>
+								<span className="text-xs sm:text-sm text-gray-400">Twitter (X)</span>
 							</motion.div>
 						</motion.a>
 
