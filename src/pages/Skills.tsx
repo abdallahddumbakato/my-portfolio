@@ -12,6 +12,7 @@ import {
 	MongoDBLogo, VSCodeLogo, GitLogo, TailwindLogo, ShadCNLogo, NextjsLogo,
 	VirtualBoxLogo, VercelLogo
 } from '@/components/TechLogos';
+import SEO from '@/components/SEO';
 
 const skills = [
 	{
@@ -98,47 +99,54 @@ const skills = [
 
 const Skills = () => {
 	return (
-		<div className="min-h-screen pt-20 px-4 max-w-6xl mx-auto pb-20">
-			<ScrollAnimation>
-				<h2 className="text-4xl font-bold mb-4 gradient-text">Technical Skills</h2>
-			</ScrollAnimation>
+		<>
+			<SEO 
+				title="Technical Skills & Expertise - Ddumba Abdallah Kato"
+				description="Comprehensive overview of my technical skills including programming languages (C++, Python, JavaScript, TypeScript), frontend development (React, Next.js), backend development (Node.js), databases (MySQL, MongoDB), and DevOps tools."
+				canonicalUrl="https://ddumba.kyakabi.com/skills"
+			/>
+			<div className="min-h-screen pt-20 px-4 max-w-6xl mx-auto pb-20">
+				<ScrollAnimation>
+					<h2 className="text-4xl font-bold mb-4 gradient-text">Technical Skills</h2>
+				</ScrollAnimation>
 
-			<ScrollAnimation>
-				<p className="text-gray-400 mb-12 max-w-2xl">
-					A comprehensive overview of my technical expertise and tools I work with
-				</p>
-			</ScrollAnimation>
+				<ScrollAnimation>
+					<p className="text-gray-400 mb-12 max-w-2xl">
+						A comprehensive overview of my technical expertise and tools I work with
+					</p>
+				</ScrollAnimation>
 
-			<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-				{skills.map((skillGroup, index) => (
-					<ScrollAnimation key={skillGroup.category}>
-						<div className="bg-gray-800/50 p-6 rounded-lg backdrop-blur-sm hover:bg-gray-800/70 transition-all border border-white/5">
-							<div className="flex items-center space-x-3 mb-6">
-								<div className="p-2 bg-white/10 rounded-lg">
-									{skillGroup.icon}
-								</div>
-								<h3 className="text-lg font-semibold">{skillGroup.category}</h3>
-							</div>
-							<div className="grid grid-cols-2 gap-4">
-								{skillGroup.items.map((skill, skillIndex) => (
-									<div
-										key={skill.name}
-										className="bg-gray-700/50 px-4 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-all group"
-									>
-										<div className="text-gray-400 group-hover:text-white transition-colors">
-											{skill.icon}
-										</div>
-										<span className="text-gray-400 group-hover:text-white transition-colors text-sm">
-											{skill.name}
-										</span>
+				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					{skills.map((skillGroup, index) => (
+						<ScrollAnimation key={skillGroup.category}>
+							<div className="bg-gray-800/50 p-6 rounded-lg backdrop-blur-sm hover:bg-gray-800/70 transition-all border border-white/5">
+								<div className="flex items-center space-x-3 mb-6">
+									<div className="p-2 bg-white/10 rounded-lg">
+										{skillGroup.icon}
 									</div>
-								))}
+									<h3 className="text-lg font-semibold">{skillGroup.category}</h3>
+								</div>
+								<div className="grid grid-cols-2 gap-4">
+									{skillGroup.items.map((skill, skillIndex) => (
+										<div
+											key={skill.name}
+											className="bg-gray-700/50 px-4 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-all group"
+										>
+											<div className="text-gray-400 group-hover:text-white transition-colors">
+												{skill.icon}
+											</div>
+											<span className="text-gray-400 group-hover:text-white transition-colors text-sm">
+												{skill.name}
+											</span>
+										</div>
+									))}
+								</div>
 							</div>
-						</div>
-					</ScrollAnimation>
-				))}
+						</ScrollAnimation>
+					))}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
