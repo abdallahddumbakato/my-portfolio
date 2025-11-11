@@ -6,6 +6,8 @@ import Footer from '@/components/Footer';
 import './globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import SEO from '@/components/SEO';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -14,9 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: 'Ddumba Abdallah Kato - Software Developer',
-	description: 'Ddumba Abdallah Kato - Software Developer specializing in full stack development, web technologies, and modern web applications. Expert in database systems and cloud computing.',
-	keywords: 'Ddumba Abdallah Kato, Software Developer, Full Stack Developer, Web Developer, React Developer, Next.js Expert, Database Developer, Frontend Specialist, Backend Developer, JavaScript Expert, TypeScript Developer, Node.js Developer, MongoDB Expert, SQL Developer, Uganda Developer',
+	title: 'Ddumba Abdallah Kato - Software Developer & Full Stack Specialist',
+	description: 'Software Developer specializing in Full Stack Development with expertise in Web Technologies, Database Systems and Cloud Computing. Based in Kampala, Uganda.',
+	keywords: 'Ddumba Abdallah Kato, Software Developer, Full Stack Developer, Web Developer, React Developer, Next.js Expert, Database Developer, Frontend Specialist, Backend Developer, JavaScript Expert, TypeScript Developer, Node.js Developer, MongoDB Expert, SQL Developer, Uganda Developer, Kampala Developer',
 	authors: [{ name: 'Ddumba Abdallah Kato' }],
 	creator: 'Ddumba Abdallah Kato',
 	manifest: '/manifest.json',
@@ -26,33 +28,47 @@ export const metadata: Metadata = {
 		type: 'website',
 		locale: 'en_US',
 		url: 'https://ddumba.kyakabi.com/',
-		title: 'Ddumba Abdallah Kato - Software Developer',
-		description: 'Software Developer specializing in full stack development, web technologies, and modern web applications.',
+		title: 'Ddumba Abdallah Kato - Software Developer & Full Stack Specialist',
+		description: 'Software Developer specializing in Full Stack Development with expertise in Web Technologies, Database Systems and Cloud Computing. Based in Kampala, Uganda.',
 		siteName: 'Ddumba Abdallah Kato Portfolio',
+		images: [
+			{
+				url: '/og-image.jpg',
+				width: 1200,
+				height: 630,
+				alt: 'Ddumba Abdallah Kato - Software Developer',
+			},
+		],
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Ddumba Abdallah Kato - Software Developer',
-		description: 'Software Developer specializing in full stack development, web technologies, and modern web applications.',
-		creator: '@abdallahddumbakato',
+		title: 'Ddumba Abdallah Kato - Software Developer & Full Stack Specialist',
+		description: 'Software Developer specializing in Full Stack Development with expertise in Web Technologies, Database Systems and Cloud Computing.',
+		creator: '@Abdallahddumbakato',
+		images: ['/og-image.jpg'],
 	},
 	robots: {
 		index: true,
 		follow: true,
-		nocache: true,
 		googleBot: {
 			index: true,
 			follow: true,
-			noimageindex: true,
+			'max-video-preview': -1,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
 		},
 	},
 	metadataBase: new URL('https://ddumba.kyakabi.com'),
 	alternates: {
 		canonical: '/',
+		languages: {
+			'en-US': '/',
+		},
 	},
 	verification: {
-		google: '/googlea4a36904e14398c1.html',
+		google: 'google5ab779767ea55a1b',
 	},
+	category: 'technology',
 };
 
 export default function RootLayout({
@@ -63,6 +79,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={inter.className}>
 			<head>
+				<GoogleAnalytics />
 				<link rel="shortcut icon" href="/nextjs.png" type="image/x-icon" />
 				<link rel="apple-touch-icon" href="/nextjs.png" />
 				<meta name="theme-color" content="#000000" />
@@ -74,9 +91,10 @@ export default function RootLayout({
 					<Background3D />
 					<Navbar />
 					<main className="flex-grow">{children}</main>
-					<SpeedInsights />
 					<Footer />
 				</div>
+				<SEO />
+				<SpeedInsights />
 				<Analytics />
 			</body>
 		</html>
