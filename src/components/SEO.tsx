@@ -56,7 +56,7 @@ const SEO: React.FC<SEOProps> = ({
             "jobTitle": "Software Developer",
             "url": "https://ddumba.kyakabi.com",
             "sameAs": [
-              "https://github.com/Hatalabdallah",
+              "https://github.com/abdallahddumbakato",
               "https://linkedin.com/in/Hatalabdallah"
             ],
             "knowsAbout": [
