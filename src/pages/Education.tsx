@@ -1,47 +1,88 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { GraduationCap, Calendar, MapPin, BookOpen, Award, FileText, ExternalLink } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, BookOpen, Award, FileText, ExternalLink, Star } from 'lucide-react';
 import { ScrollAnimation } from '@/components/ScrollAnimation';
 import Image from 'next/image';
 
 const Education = () => {
 	const educationData = [
 		{
-			school: "Bengal College of Engineering and Technology",
-			location: "Durgapur, WB, India",
-			duration: "July 2020 - June 2024",
-			degree: "B.Tech (Computer Science and Engineering)",
-			grade: "CGPA: 8.48 (80%)",
-			image: "/education/college_img.jpg",
-			resultUrl: "/files/education_pdf/B Tech.pdf",
+			school: "YMCA Comprehensive Institute",
+			location: "Kampala, Uganda",
+			duration: "2023 - PRESENT",
+			degree: "Bachelor of Science in Information Technology (Final Year)",
+			grade: "GPA: 4.0/4.0",
+			image: "/education/graduation-ymca.jpg",
+			resultUrl: "/files/education_pdf/Transcript.pdf",
 			coursework: [
-				"DSA",
-				"OOPs",
-				"DBMS",
-				"AI",
-				"ML",
-				"OS",
-				"Networking",
+				"Web Technologies",
+				"Database Systems", 
+				"Cloud Computing",
+				"Software Engineering",
+				"Algorithms",
+				"Network Security"
 			],
-			description: "During my time at BCET, I have built a strong foundation in computer science, focusing on software development, problem-solving, and real-world applications. Engaging in hands-on projects, internships, and coding challenges has helped me enhance my technical and analytical skills. This experience prepares me for a future in software development, equipping me with the ability to create scalable and efficient solutions."
+			description: "Currently pursuing my Bachelor's degree in Information Technology with a perfect GPA. My studies focus on modern web technologies, database management systems, and cloud computing. I'm actively engaged in practical projects that apply theoretical knowledge to real-world software development challenges."
 		},
 		{
-			school: "Birsingha Bhagabati Vidyalaya",
-			location: "Medinipur, WB, India",
-			duration: "June 2018 - July 2019",
-			degree: "Higher Secondary (WBSC)",
-			grade: "Percentage: 79%",
+			school: "Islamic University in Uganda",
+			location: "Mbale, Uganda", 
+			duration: "2015 - 2018",
+			degree: "Bachelor of Science in Computer Science, First Class Honours",
+			grade: "GPA: 4.58/5.0",
 			image: "/education/school_img.jpg",
 			resultUrl: "/files/education_pdf/HS MARK SHEET.pdf",
-			subjects: [
-				"Physics",
-				"Chemistry",
-				"Mathematics",
-				"Biology",
-				"Computer Science"
+			coursework: [
+				"Database Systems",
+				"Software Engineering",
+				"Algorithms",
+				"Data Structures",
+				"Operating Systems",
+				"Computer Networks"
 			],
-			description: "My higher secondary education laid the foundation for my technical journey, strengthening my analytical thinking and problem-solving abilities. The strong emphasis on mathematics and computer science has been instrumental in shaping my passion for software development, enabling me to approach complex technical challenges with confidence."
+			description: "Graduated with First Class Honours in Computer Science, building a strong foundation in software development principles. The program emphasized database systems, software engineering methodologies, and algorithmic problem-solving, providing me with comprehensive technical skills for professional software development."
+		},
+		{
+			school: "Kyaddondo Secondary School",
+			location: "P.O Box 25355 Kampala | Kiryagonja Village, Matugga Along Matugga - Wakiso Road, In Matugga Village",
+			duration: "2013",
+			degree: "Uganda Advanced Certificate of Education (UACE)",
+			grade: "Principal Level: Geometrical & Building Drawing (Grade C)",
+			image: "/education/kyaddondoss-aerial.JPG",
+			resultUrl: "/files/education_pdf/UACE.pdf",
+			subjects: [
+				"Geometrical & Building Drawing (Principal)",
+				"General Paper (Subsidiary)",
+				"Mathematics (Subsidiary)", 
+				"Physics (Subsidiary)",
+				"Subsidiary Computer"
+			],
+			description: "Completed Uganda Advanced Certificate of Education at age 19 with principal level in Geometrical & Building Drawing. The curriculum provided a strong foundation in technical drawing and scientific subjects, developing analytical and problem-solving skills.",
+			achievement: "Principal level achievement in technical drawing subjects"
+		},
+		{
+			school: "Kyaddondo Secondary School", 
+			location: "P.O Box 25355 Kampala | Kiryagonja Village, Matugga Along Matugga - Wakiso Road, In Matugga Village",
+			duration: "2010",
+			degree: "Uganda Certificate of Education (UCE)",
+			grade: "Division I (First Division)",
+			image: "/education/kyaddondoss-aerial2.jpg",
+			resultUrl: "/files/education_pdf/UCE.pdf",
+			subjects: [
+				"Islamic Religious Education (Grade 1)",
+				"Mathematics (Grade 2)",
+				"History (Grade 2)",
+				"English (Grade 4)",
+				"Geography (Grade 4)",
+				"Physics (Grade 4)",
+				"Chemistry (Grade 4)",
+				"Biology (Grade 4)",
+				"Technical Drawing (Grade 4)",
+				"Commerce (Grade 4)"
+			],
+			description: "Completed Uganda Certificate of Education with Division I (First Division) at age 16, passing all 10 subjects taken. Demonstrated strong academic performance with excellent results in Islamic Religious Education, Mathematics, and History.",
+			achievement: "Completed UCE with Division I at age 16, passing all 10 subjects"
 		}
 	];
 
@@ -61,7 +102,7 @@ const Education = () => {
 
 			<div className="space-y-12">
 				{educationData.map((edu, index) => (
-					<ScrollAnimation key={edu.school}>
+					<ScrollAnimation key={`${edu.school}-${edu.duration}`}>
 						<motion.div
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
@@ -82,7 +123,7 @@ const Education = () => {
 										fill
 										className="object-cover"
 										sizes="(max-width: 768px) 100vw, 300px"
-										priority
+										priority={index < 2}
 										quality={90}
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
@@ -112,8 +153,19 @@ const Education = () => {
 										<p className="text-sm leading-relaxed">{edu.description}</p>
 									</div>
 
+									{edu.achievement && (
+										<div className="mb-4 p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
+											<div className="flex items-center gap-2 text-yellow-400">
+												<Star className="w-4 h-4" />
+												<span className="text-sm font-semibold">Key Achievement:</span>
+											</div>
+											<p className="text-yellow-300 text-sm mt-1">{edu.achievement}</p>
+										</div>
+									)}
+
 									{edu.coursework && (
 										<div className="mb-6">
+											<h5 className="text-sm font-semibold mb-3 text-gray-300">Relevant Coursework:</h5>
 											<div className="flex flex-wrap gap-2">
 												{edu.coursework.map((course) => (
 													<span
@@ -129,6 +181,7 @@ const Education = () => {
 
 									{edu.subjects && (
 										<div className="mb-6">
+											<h5 className="text-sm font-semibold mb-3 text-gray-300">Subjects:</h5>
 											<div className="flex flex-wrap gap-2">
 												{edu.subjects.map((subject) => (
 													<span
@@ -149,7 +202,7 @@ const Education = () => {
 										className="inline-flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-white/20 rounded-lg transition-all text-sm font-medium"
 										whileHover={{ scale: 1.02 }}
 									>
-										View Result
+										View Certificate
 										<ExternalLink className="w-4 h-4" />
 									</motion.a>
 								</div>
