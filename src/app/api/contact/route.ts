@@ -142,12 +142,12 @@ export async function POST(request: NextRequest) {
                 <td align="center" valign="top">
                     <!-- Container -->
                     <table class="container" border="0" cellpadding="0" cellspacing="0" width="600">
-                            <!-- Header -->
-                            <tr>
-                                <td class="header" align="center">
-                                    <img src="https://ddumba.kyakabi.com/profile/ibd.png" alt="Ddumba Abdallah Kato Portfolio" width="564" style="display: block; max-width: 100%;">
-                                </td>
-                            </tr>
+                        <!-- Header -->
+                        <tr>
+                            <td class="header" align="center">
+                                <img src="http://ddumba.kyakabi.com/profile/ibd.png" alt="Ddumba Abdallah Kato Portfolio" width="564" style="display: block; max-width: 100%;">
+                            </td>
+                        </tr>
                         
                         <!-- Content -->
                         <tr>
@@ -341,12 +341,12 @@ export async function POST(request: NextRequest) {
                 <td align="center" valign="top">
                     <!-- Container -->
                     <table class="container" border="0" cellpadding="0" cellspacing="0" width="600">
-                            <!-- Header -->
-                            <tr>
-                                <td class="header" align="center">
-                                    <img src="https://ddumba.kyakabi.com/profile/ibd.png" alt="Ddumba Abdallah Kato Portfolio" width="564" style="display: block; max-width: 100%;">
-                                </td>
-                            </tr>
+                        <!-- Header -->
+                        <tr>
+                            <td class="header" align="center">
+                                <img src="http://ddumba.kyakabi.com/profile/ibd.png" alt="Ddumba Abdallah Kato Portfolio" width="564" style="display: block; max-width: 100%;">
+                            </td>
+                        </tr>
                         
                         <!-- Content -->
                         <tr>
