@@ -45,7 +45,7 @@ const Education = () => {
 		},
 		{
 			school: "Kyaddondo Secondary School",
-			location: "P.O Box 25355 Kampala | Kiryagonja Village, Matugga Along Matugga - Wakiso Road, In Matugga Village",
+			location: "Kiryagonja Village Along Matugga",
 			duration: "2013",
 			degree: "Uganda Advanced Certificate of Education (UACE)",
 			grade: "Principal Level: Geometrical & Building Drawing (Grade C)",
@@ -63,7 +63,7 @@ const Education = () => {
 		},
 		{
 			school: "Kyaddondo Secondary School", 
-			location: "P.O Box 25355 Kampala | Kiryagonja Village, Matugga Along Matugga - Wakiso Road, In Matugga Village",
+			location: "Kiryagonja Village Along Matugga",
 			duration: "2010",
 			degree: "Uganda Certificate of Education (UCE)",
 			grade: "Division I (First Division)",
