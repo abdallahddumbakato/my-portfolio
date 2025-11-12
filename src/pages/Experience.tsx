@@ -10,7 +10,7 @@ const experiences = [
 		title: "Software Engineering Intern",
 		company: "Code Alpha",
 		location: "Remote",
-		period: "Jun 2024 - Aug2024",
+		period: "Jun 2024 - Aug 2024",
 		type: "Internship",
 		image: "/experience/codeAlpha_page.jpg",
 		certificateUrl: "/files/experience_pdf/codeAlpha.pdf",
