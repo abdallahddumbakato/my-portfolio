@@ -13,9 +13,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Generate unique reference ID
-    const referenceId = `REF-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     const currentYear = new Date().getFullYear();
+    const plainMessage = message.replace(/\s+/g, ' ').trim();
+    const messageExcerpt = plainMessage.length > 200 ? `${plainMessage.slice(0, 200)}…` : plainMessage;
 
     // Create transporter
     const transporter = nodemailer.createTransport({
@@ -160,34 +160,27 @@ export async function POST(request: NextRequest) {
                                 </p>
                                 
                                 <p>Hello Ddumba,</p>
-                                
-                                <p>You have received a new message through your portfolio website contact form. Here are the details:</p>
-                                
+
+                                <p>You've received a new message through your portfolio contact form:</p>
+
                                 <p><strong>Contact Information:</strong><br>
                                 Name: ${name}<br>
                                 Email: ${email}<br>
                                 Phone: ${phone}<br>
                                 Submitted: ${new Date().toLocaleString()}</p>
-                                
+
                                 <p><strong>Message:</strong><br>
                                 ${message.replace(/\n/g, '<br>')}</p>
-                                
-                                <p>This potential client has shown interest in your AI platform engineering services. They may be looking for AI infrastructure, cloud platform engineering, or other technical expertise that matches your skills.</p>
-                                
-                                <p>Please respond to this inquiry within 24 hours to maintain professional communication standards.</p>
-                                
-                                <p>You can reply directly to: ${email}</p>
-                                
-                                <p>Kind Regards,<br>
-                                <strong>Your Portfolio Website System</strong></p>
+
+                                <p>Reply directly to ${email} to respond.</p>
                             </td>
                         </tr>
-                        
+
                         <!-- Footer -->
                         <tr>
                             <td class="footer">
                                 <p><strong>DDUMBA ABDALLAH KATO</strong><br>
-                                Platform & AI Systems Engineer based in Kampala, Uganda<br>
+                                AI Engineer & Solutions Architect based in Kampala, Uganda<br>
                                 a.ddumba@kyakabi.com | +256701019242</p>
                                 
                                 <!-- Social Icons -->
@@ -351,38 +344,12 @@ export async function POST(request: NextRequest) {
                         <!-- Content -->
                         <tr>
                             <td class="content">
-                                <h2 class="text-center" style="text-align: center;"><strong><u>MESSAGE CONFIRMATION</u></strong></h2>
-                                
-                                <p class="text-center" style="text-align: center;">
-                                    Ddumba Abdallah Kato - Platform & AI Systems Engineer<br>
-                                    AI Infrastructure & Cloud Platform Specialist
-                                </p>
-                                
-                                <p>Dear ${name},</p>
-                                
-                                <p>Thank you for reaching out through my portfolio website! I've successfully received your message and appreciate you taking the time to contact me.</p>
-                                
-                                <p><strong>Here's a summary of your submission:</strong><br>
-                                Received: ${new Date().toLocaleString()}<br>
-                                Reference ID: ${referenceId}</p>
-                                
-                                <p>As a Platform & AI Systems Engineer specializing in AI infrastructure, LLM systems, and cloud platform engineering, I'm excited to learn about your project requirements.</p>
-                                
-                                <p><strong>What happens next?</strong><br>
-                                I typically respond to all inquiries within 24 hours. During this time, I'll review your message in detail and prepare a thoughtful response addressing your specific needs.</p>
-                                
-                                <p>In the meantime, feel free to explore more of my work:</p>
-                                <ul>
-                                    <li>View my <a href="https://ddumba.kyakabi.com/projects">recent projects</a></li>
-                                    <li>Check out my <a href="https://ddumba.kyakabi.com/skills">technical skills</a></li>
-                                    <li>See my professional <a href="https://ddumba.kyakabi.com/certificates">certifications</a></li>
-                                </ul>
-                                
-                                <p>I look forward to connecting with you and discussing how we can bring your ideas to life with modern, efficient technology solutions!</p>
-                                
-                                <p>Best regards,<br>
-                                <strong>Ddumba Abdallah Kato</strong><br>
-                                Platform & AI Systems Engineer</p>
+                                <p>Hi ${name},</p>
+
+                                <p>Thanks for reaching out about ${subject}. I read what you sent — "${messageExcerpt}" — and wanted to confirm it's landed with me; I'll get back to you with a proper reply, usually within 24 hours.</p>
+
+                                <p>Talk soon,<br>
+                                Ddumba</p>
                             </td>
                         </tr>
                         
@@ -390,9 +357,9 @@ export async function POST(request: NextRequest) {
                         <tr>
                             <td class="footer">
                                 <p><strong>DDUMBA ABDALLAH KATO</strong><br>
-                                Platform & AI Systems Engineer based in Kampala, Uganda<br>
-                                Specializing in AI Infrastructure, LLM Systems & Cloud Platform Engineering</p>
-                                
+                                AI Engineer & Solutions Architect based in Kampala, Uganda<br>
+                                Specializing in Generative AI, MLOps & Cloud Platform Engineering</p>
+
                                 <p>a.ddumba@kyakabi.com | +256701019242</p>
                                 
                                 <!-- Social Icons -->
@@ -414,10 +381,6 @@ export async function POST(request: NextRequest) {
                                         <img src="https://cdn-images.mailchimp.com/icons/social-block-v2/outline-light-github-48.png" alt="GitHub" width="24" height="24">
                                     </a>
                                 </div>
-                                
-                                <p style="font-size: 12px;">
-                                    This is an automated confirmation email. Please do not reply to this message.
-                                </p>
                                 
                                 <p style="font-size: 10px;">
                                     &copy; ${currentYear} Ddumba Abdallah Kato. All rights reserved.
@@ -447,6 +410,18 @@ export async function POST(request: NextRequest) {
       subject: 'Message Received - Ddumba Abdallah Kato',
       html: senderEmailHtml,
     });
+
+    // Fire WhatsApp notification — failure here must not affect the success response
+    try {
+      const whatsappExcerpt = plainMessage.length > 300 ? `${plainMessage.slice(0, 300)}…` : plainMessage;
+      const whatsappMessage = `New portfolio contact\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${whatsappExcerpt}`;
+      const whatsappUrl = `https://api.callmebot.com/whatsapp.php?phone=256701019242&text=${encodeURIComponent(whatsappMessage)}&apikey=${process.env.WHATSAPP_API_KEY}`;
+      const whatsappResponse = await fetch(whatsappUrl);
+      const whatsappResponseText = await whatsappResponse.text();
+      console.log(`WhatsApp notification response (status ${whatsappResponse.status}):`, whatsappResponseText);
+    } catch (whatsappError) {
+      console.error('WhatsApp notification failed:', whatsappError);
+    }
 
     return NextResponse.json(
       { message: 'Emails sent successfully' },
