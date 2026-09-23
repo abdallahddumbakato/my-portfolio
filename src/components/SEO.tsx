@@ -19,20 +19,20 @@ const SEO: React.FC<SEOProps> = ({
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Ddumba Abdallah Kato",
-            "jobTitle": "Platform & AI Systems Engineer",
+            "jobTitle": "AI Engineer & Solutions Architect",
             "url": canonicalUrl,
             "sameAs": [
               "https://github.com/abdallahddumbakato",
               "https://www.linkedin.com/in/ddumbaka/"
             ],
             "knowsAbout": [
-              "AI Infrastructure",
-              "LLM Infrastructure",
-              "AWS",
-              "Kubernetes",
+              "Generative AI",
+              "MLOps",
+              "Microsoft Azure",
               "RAG",
-              "Inference Optimization",
-              "Platform Engineering",
+              "Cloud Platform Engineering",
+              "AI Infrastructure",
+              "LLM Systems",
               "DevOps"
             ],
             "address": {

@@ -7,81 +7,83 @@ import {
 } from 'lucide-react';
 import { ScrollAnimation } from '@/components/ScrollAnimation';
 import {
-	PythonLogo, JavaScriptLogo, TypeScriptLogo, NodeLogo,
-	GitLogo, VercelLogo
+	PythonLogo, GitLogo
 } from '@/components/TechLogos';
 import SEO from '@/components/SEO';
 
 const skills = [
 	{
-		category: 'AI & LLM Infrastructure',
+		category: 'Machine Learning & GenAI',
 		icon: <Brain className="w-6 h-6" />,
 		items: [
+			{ name: 'Azure ML', icon: <Cloud className="w-4 h-4" /> },
+			{ name: 'Azure OpenAI', icon: <Brain className="w-4 h-4" /> },
+			{ name: 'Hugging Face', icon: <Boxes className="w-4 h-4" /> },
 			{ name: 'LangChain', icon: <Boxes className="w-4 h-4" /> },
-			{ name: 'LlamaIndex', icon: <Database className="w-4 h-4" /> },
-			{ name: 'PyTorch', icon: <PythonLogo /> },
-			{ name: 'Pinecone', icon: <Database className="w-4 h-4" /> },
-			{ name: 'vLLM', icon: <Server className="w-4 h-4" /> }
+			{ name: 'MLflow', icon: <Activity className="w-4 h-4" /> }
 		]
 	},
 	{
-		category: 'Platform & Cloud',
+		category: 'Data Engineering & Pipelines',
+		icon: <Database className="w-6 h-6" />,
+		items: [
+			{ name: 'Azure Data Factory', icon: <Server className="w-4 h-4" /> },
+			{ name: 'Synapse', icon: <Database className="w-4 h-4" /> },
+			{ name: 'Databricks', icon: <Boxes className="w-4 h-4" /> },
+			{ name: 'Delta Lake', icon: <Database className="w-4 h-4" /> }
+		]
+	},
+	{
+		category: 'MLOps & Automation',
+		icon: <GitBranch className="w-6 h-6" />,
+		items: [
+			{ name: 'GitHub Actions', icon: <GitLogo /> },
+			{ name: 'Azure DevOps', icon: <Wrench className="w-4 h-4" /> },
+			{ name: 'AKS & Docker', icon: <Boxes className="w-4 h-4" /> },
+			{ name: 'MLflow', icon: <Activity className="w-4 h-4" /> }
+		]
+	},
+	{
+		category: 'Cloud Infrastructure (Azure)',
 		icon: <Cloud className="w-6 h-6" />,
 		items: [
-			{ name: 'AWS (EKS, Bedrock)', icon: <Cloud className="w-4 h-4" /> },
-			{ name: 'Kubernetes', icon: <Boxes className="w-4 h-4" /> },
-			{ name: 'Terraform', icon: <Layout className="w-4 h-4" /> },
-			{ name: 'ArgoCD / GitOps', icon: <GitBranch className="w-4 h-4" /> }
+			{ name: 'VNets', icon: <Network className="w-4 h-4" /> },
+			{ name: 'Managed Identities', icon: <ShieldCheck className="w-4 h-4" /> },
+			{ name: 'Private Endpoints', icon: <ShieldCheck className="w-4 h-4" /> },
+			{ name: 'RBAC', icon: <Terminal className="w-4 h-4" /> }
 		]
 	},
 	{
-		category: 'Observability & Data',
+		category: 'Observability & Governance',
 		icon: <Activity className="w-6 h-6" />,
 		items: [
+			{ name: 'OpenTelemetry', icon: <Activity className="w-4 h-4" /> },
 			{ name: 'Prometheus', icon: <Activity className="w-4 h-4" /> },
-			{ name: 'Grafana', icon: <Activity className="w-4 h-4" /> },
-			{ name: 'Kafka', icon: <Server className="w-4 h-4" /> },
-			{ name: 'TensorRT-LLM', icon: <Code2 className="w-4 h-4" /> }
+			{ name: 'Model Monitoring & Drift Detection', icon: <Activity className="w-4 h-4" /> },
+			{ name: 'FCA / ISO 27001 Compliance', icon: <ShieldCheck className="w-4 h-4" /> }
 		]
 	},
 	{
-		category: 'Programming Languages',
+		category: 'Programming & Frameworks',
 		icon: <Code2 className="w-6 h-6" />,
 		items: [
 			{ name: 'Python', icon: <PythonLogo /> },
-			{ name: 'TypeScript', icon: <TypeScriptLogo /> },
-			{ name: 'JavaScript', icon: <JavaScriptLogo /> }
+			{ name: 'PySpark', icon: <Code2 className="w-4 h-4" /> },
+			{ name: 'TensorFlow', icon: <Code2 className="w-4 h-4" /> },
+			{ name: 'PyTorch', icon: <Code2 className="w-4 h-4" /> },
+			{ name: 'Scikit-learn', icon: <Code2 className="w-4 h-4" /> },
+			{ name: 'REST / GraphQL APIs', icon: <Server className="w-4 h-4" /> }
 		]
 	},
 	{
-		category: 'Backend & Databases',
-		icon: <Server className="w-6 h-6" />,
-		items: [
-			{ name: 'FastAPI', icon: <Server className="w-4 h-4" /> },
-			{ name: 'PostgreSQL', icon: <Database className="w-4 h-4" /> },
-			{ name: 'Redis', icon: <Database className="w-4 h-4" /> },
-			{ name: 'Celery', icon: <Boxes className="w-4 h-4" /> }
-		]
-	},
-	{
-		category: 'Networking & Security',
-		icon: <Network className="w-6 h-6" />,
-		items: [
-			{ name: 'BGP', icon: <Network className="w-4 h-4" /> },
-			{ name: 'OSPF', icon: <Network className="w-4 h-4" /> },
-			{ name: 'Cisco/Juniper', icon: <Terminal className="w-4 h-4" /> },
-			{ name: 'Palo Alto Firewalls', icon: <ShieldCheck className="w-4 h-4" /> },
-			{ name: 'Wireshark', icon: <Activity className="w-4 h-4" /> }
-		]
-	},
-	{
-		category: 'Tools & DevOps',
+		category: 'DevOps & Collaboration',
 		icon: <Wrench className="w-6 h-6" />,
 		items: [
-			{ name: 'Git', icon: <GitLogo /> },
+			{ name: 'Azure DevOps', icon: <Wrench className="w-4 h-4" /> },
 			{ name: 'GitHub', icon: <GitLogo /> },
-			{ name: 'Vercel', icon: <VercelLogo /> },
-			{ name: 'CI/CD', icon: <Code2 className="w-4 h-4" /> }
+			{ name: 'Terraform', icon: <Layout className="w-4 h-4" /> },
+			{ name: 'Bicep', icon: <Layout className="w-4 h-4" /> },
+			{ name: 'Jira / Azure Boards', icon: <Boxes className="w-4 h-4" /> }
 		]
 	}
 ];

@@ -16,9 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: 'Ddumba Abdallah Kato - Platform & AI Systems Engineer',
-    description: 'Platform & AI Systems Engineer architecting LLM infrastructure at scale with AWS, Kubernetes, RAG, and inference optimization. Based in Kampala, Uganda.',
-    keywords: 'Ddumba Abdallah Kato, Platform Engineer, AI Systems Engineer, AI Infrastructure, LLM Infrastructure, AWS, Kubernetes, RAG, Inference Optimization, DevOps, Uganda Engineer, Kampala Engineer',
+    title: 'Ddumba Abdallah Kato - AI Engineer & Solutions Architect',
+    description: 'AI Engineer and Solutions Architect building enterprise GenAI, MLOps, and cloud-native AI platforms on Microsoft Azure — across defence, financial services, and the public sector. Based in Kampala, Uganda.',
+    keywords: 'Ddumba Abdallah Kato, AI Engineer, Solutions Architect, GenAI, MLOps, Azure AI, Cloud Platform Engineering, RAG, LLM Systems, DevOps, Uganda Engineer, Kampala Engineer',
     authors: [{ name: 'Ddumba Abdallah Kato' }],
     creator: 'Ddumba Abdallah Kato',
     manifest: '/manifest.json',
@@ -26,22 +26,22 @@ export const metadata: Metadata = {
         type: 'website',
         locale: 'en_US',
         url: 'https://ddumba.kyakabi.com/',
-        title: 'Ddumba Abdallah Kato - Platform & AI Systems Engineer',
-        description: 'Platform & AI Systems Engineer architecting LLM infrastructure at scale with AWS, Kubernetes, RAG, and inference optimization. Based in Kampala, Uganda.',
+        title: 'Ddumba Abdallah Kato - AI Engineer & Solutions Architect',
+        description: 'AI Engineer and Solutions Architect building enterprise GenAI, MLOps, and cloud-native AI platforms on Microsoft Azure — across defence, financial services, and the public sector. Based in Kampala, Uganda.',
         siteName: 'Ddumba Abdallah Kato Portfolio',
         images: [
             {
                 url: '/og-image.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Ddumba Abdallah Kato - Platform & AI Systems Engineer',
+                alt: 'Ddumba Abdallah Kato - AI Engineer & Solutions Architect',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Ddumba Abdallah Kato - Platform & AI Systems Engineer',
-        description: 'Platform & AI Systems Engineer specializing in AI infrastructure, LLM systems, and production-grade cloud platforms.',
+        title: 'Ddumba Abdallah Kato - AI Engineer & Solutions Architect',
+        description: 'AI Engineer and Solutions Architect specializing in GenAI, MLOps, and cloud-native platforms on Microsoft Azure.',
         creator: '@Abdallahddumbakato',
         images: ['/og-image.jpg'],
     },

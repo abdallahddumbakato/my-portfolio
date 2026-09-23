@@ -10,11 +10,11 @@ const About = () => {
 		{
 			icon: <Code2 className="w-6 h-6" />,
 			title: "AI Infrastructure",
-			description: "Architecting auto-scaling clusters for GPU-intensive workloads"
+			description: "Architecting sovereign, compliant AI platforms on Microsoft Azure"
 		},
 		{
 			icon: <Briefcase className="w-6 h-6" />,
-			title: "7+ Years Experience",
+			title: "12+ Years Experience",
 			description: "Platform engineering, AI systems, and cloud infrastructure"
 		},
 		{
@@ -30,7 +30,7 @@ const About = () => {
 		"High-Fidelity RAG",
 		"Automated Governance",
 		"Platform Engineering",
-		"Kubernetes & AWS"
+		"Azure AI & MLOps"
 	];
 
 	return (
@@ -61,7 +61,7 @@ const About = () => {
 					<ScrollAnimation className="space-y-6">
 						<div className="space-y-4">
 							<p className="text-gray-300 leading-relaxed">
-								Hi! I'm Ddumba Abdallah Kato, an AI Platform Engineer focused on production AI and infrastructure. I build the "engines" that allow AI to survive in production — while much of the industry focuses on prompt engineering, I focus on the "Day 2" reality of why inference cost runs higher than projected, why RAG pipeline latency lags, and how to scale a Kubernetes cluster to handle tens of thousands of concurrent agentic requests.
+								Hi! I'm Ddumba Abdallah Kato, an AI Platform Engineer focused on production AI and infrastructure. I build the "engines" that allow AI to survive in production — while much of the industry focuses on prompt engineering, I focus on the "Day 2" reality of why inference cost runs higher than projected, why RAG pipeline latency lags, and how to operationalize a GenAI pipeline on Azure so it holds up under regulatory scrutiny, not just load.
 							</p>
 							<p className="text-gray-300 leading-relaxed">
 								I sit at the intersection of platform reliability and AI system design. My goal is to transform "experimental AI" into enterprise-grade infrastructure that is resilient, observable, and profitable — bridging the gap between model development and production-grade deployment so AI platforms are scalable and cost-efficient from the ground up.
@@ -75,7 +75,7 @@ const About = () => {
 							<div className="pt-4">
 								<h3 className="text-2xl font-semibold mb-4 gradient-text">Quick Facts</h3>
 								<ul className="list-none space-y-3">
-									{["Based in Kampala, Uganda (Remote)", "Senior Platform Engineer (AI Systems) at SymphonyAI", "Director Solutions Architecture at Kyakabi Group", "BEng Electrical & Electronics Engineering (2.1) - Queen Mary University of London"].map((fact, index) => (
+									{["Based in Kampala, Uganda (Remote)", "AI Solutions Engineer at SymphonyAI", "Director Solutions Architecture at Kyakabi Group", "BEng Electrical & Electronics Engineering (2.1) - Queen Mary University of London"].map((fact, index) => (
 										<motion.li
 											key={fact}
 											className="flex items-center space-x-2 text-gray-300"

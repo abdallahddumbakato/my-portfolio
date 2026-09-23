@@ -38,7 +38,7 @@ const Footer = () => {
 							<span className="text-xl font-bold text-white">Ddumba Abdallah Kato</span>
 						</Link>
 						<p className="text-sm text-gray-400">
-							Platform & AI Systems Engineer based in Kampala, Uganda.
+							AI Engineer & Solutions Architect based in Kampala, Uganda.
 						</p>
 					</div>
 

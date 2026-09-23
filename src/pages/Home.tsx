@@ -45,8 +45,8 @@ const Home = () => {
 	return (
 		<>
 			<SEO 
-				title="Ddumba Abdallah Kato - Platform & AI Systems Engineer"
-				description="Platform & AI Systems Engineer architecting LLM infrastructure at scale with AWS, Kubernetes, RAG, and inference optimization. Based in Kampala, Uganda."
+				title="Ddumba Abdallah Kato - AI Engineer & Solutions Architect"
+				description="AI Engineer and Solutions Architect building enterprise GenAI, MLOps, and cloud-native AI platforms on Microsoft Azure — across defence, financial services, and the public sector. Based in Kampala, Uganda."
 				canonicalUrl="https://ddumba.kyakabi.com"
 			/>
 			<div className="min-h-screen flex items-center justify-center px-4 mt-7 sm:mt-0 md:mt-3 lg:mt-5">
@@ -74,7 +74,7 @@ const Home = () => {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}
 					>
-						Platform & AI Systems Engineer architecting LLM infrastructure at scale — AWS, Kubernetes, RAG, and inference optimization.
+						AI Engineer & Solutions Architect building enterprise GenAI and MLOps platforms — Microsoft Azure, RAG, and regulated-industry AI infrastructure.
 					</motion.p>
 
 					<motion.div
